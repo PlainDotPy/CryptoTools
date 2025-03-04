@@ -1,7 +1,13 @@
 import requests
 import datetime
 import os
+import pyfiglet
 
+def print_header():
+    """Print the WALLETRAX banner using ASCII art"""
+    banner = pyfiglet.figlet_format("WALLETRAX")
+    print(banner)
+    
 SOLANA_RPC_URL = "https://api.mainnet-beta.solana.com"
 WALLET_FILE = "walletrax.txt"
 TOKEN_IDS_FILE = "tokenIDs.txt"
@@ -215,6 +221,8 @@ def track_wallet():
 
 def main():
     while True:
+        print_header()  # Display the ASCII art header at the beginning of each menu iteration
+        
         print("Main Menu:")
         print("1. Track Wallet")
         print("2. Add Custom Token Mapping")
